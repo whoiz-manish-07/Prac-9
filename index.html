@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixelora Store</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f5f3ff;
+        }
+
+        .navbar {
+            background-color: #171321;
+        }
+
+        .navbar-brand {
+            color: #c084fc;
+            font-weight: bold;
+            font-size: 26px;
+        }
+
+        .navbar a {
+            color: white;
+        }
+
+        .section-title {
+            color: #6b21a8;
+            font-weight: bold;
+        }
+
+        .category-list .list-group-item {
+            cursor: pointer;
+        }
+
+        .category-list .list-group-item:hover {
+            background-color: #ede9fe;
+            color: #6b21a8;
+        }
+
+        .product-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px #ddd5ee;
+            transition: transform 0.3s;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .btn-purple {
+            background-color: #9333ea;
+            color: white;
+            border: none;
+        }
+
+        .btn-purple:hover {
+            background-color: #6b21a8;
+            color: white;
+        }
+
+        .price {
+            color: #7e22ce;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #171321;
+            color: white;
+            padding: 18px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">Pixelora</a>
+
+        <button class="navbar-toggler bg-light" type="button"
+            data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#products">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#cart">Cart</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Heading -->
+<div class="container my-4">
+    <h2 class="text-center section-title">Welcome to Pixelora</h2>
+    <p class="text-center">Discover something awesome for your everyday life!</p>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <!-- Left Categories -->
+        <div class="col-md-3 mb-4">
+            <h4 class="section-title">Categories</h4>
+
+            <ul class="list-group category-list">
+                <li class="list-group-item">All Products</li>
+                <li class="list-group-item">Gaming</li>
+                <li class="list-group-item">Audio</li>
+                <li class="list-group-item">Fashion</li>
+                <li class="list-group-item">Accessories</li>
+                <li class="list-group-item">Home Decor</li>
+                <li class="list-group-item">Stationery</li>
+                <li class="list-group-item">Fitness</li>
+                <li class="list-group-item">Electronics</li>
+            </ul>
+        </div>
+
+        <!-- Products -->
+        <div class="col-md-9" id="products">
+            <h4 class="section-title mb-3">Featured Products</h4>
+
+            <div class="row g-4">
+
+                <!-- Product 1 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?auto=format&fit=crop&w=600&q=80"
+                            alt="Gaming keyboard">
+                        <div class="card-body">
+                            <h5>Gaming Keyboard</h5>
+                            <p>RGB mechanical keyboard.</p>
+                            <p class="price">₹1,499</p>
+                            <button class="btn btn-purple w-100"
+                                onclick="addCart('Gaming Keyboard',1499)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=80"
+                            alt="Bluetooth speaker">
+                        <div class="card-body">
+                            <h5>Bluetooth Speaker</h5>
+                            <p>Portable wireless speaker.</p>
+                            <p class="price">₹1,199</p>
+                            <button class="btn btn-purple w-100"
+                                onclick="addCart('Bluetooth Speaker',1199)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
+                            alt="Backpack">
+                        <div class="card-body">
+                            <h5>Urban Backpack</h5>
+                            <p>Stylish everyday backpack.</p>
+                            <p class="price">₹899</p>
+                            <button class="btn btn-purple w-100"
+                                onclick="addCart('Urban Backpack',899)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=600&q=80"
+                            alt="Coffee mug">
+                        <div class="card-body">
+                            <h5>Classic Coffee Mug</h5>
+                            <p>A mug for your daily coffee.</p>
+                            <p class="price">₹299</p>
+                            <button class="btn btn-purple w-100"
+                                onclick="addCart('Classic Coffee Mug',299)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=80"
+                            alt="Computer mouse">
+                        <div class="card-body">
+                            <h5>Wireless Mouse</h5>
+                            <p>Smooth and comfortable mouse.</p>
+                            <p class="price">₹599</p>
+                            <button class="btn btn-purple w-100"
+                                onclick="addCart('Wireless Mouse',599)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80"
+                            alt="Desk lamp">
+                        <div class="card-body">
+                            <h5>Modern Desk Lamp</h5>
+                            <p>Perfect for your study desk.</p>
+                            <p class="price">₹799</p>
+                            <button class="btn btn-purple w-100"
+                                onclick="addCart('Modern Desk Lamp',799)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80"
+                            alt="Notebook">
+                        <div class="card-body">
+                            <h5>Premium Notebook</h5>
+                            <p>For notes, plans and ideas.</p>
+                            <p class="price">₹249</p>
+                            <button class="btn btn-purple w-100"
+                                onclick="addCart('Premium Notebook',249)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80"
+                            alt="Fitness equipment">
+                        <div class="card-body">
+                            <h5>Fitness Essentials</h5>
+                            <p>Gear up for your workout.</p>
+                            <p class="price">₹999</p>
+                            <button class="btn btn-purple w-100"
+                                onclick="addCart('Fitness Essentials',999)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
+                            alt="Headphones">
+                        <div class="card-body">
+                            <h5>Studio Headphones</h5>
+                            <p>Enjoy music with clear sound.</p>
+                            <p class="price">₹1,799</p>
+                            <button class="btn btn-purple w-100"
+                                onclick="addCart('Studio Headphones',1799)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <nav class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">Previous</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Shopping Cart -->
+    <div class="mt-5 p-4 bg-white rounded shadow-sm" id="cart">
+        <h3 class="section-title">Shopping Cart</h3>
+
+        <ul id="cartItems" class="list-group mb-3">
+            <li class="list-group-item">Your cart is empty.</li>
+        </ul>
+
+        <h5>Total: ₹<span id="total">0</span></h5>
+
+        <button class="btn btn-danger mt-2" onclick="clearCart()">
+            Clear Cart
+        </button>
+    </div>
+</div>
+
+<footer class="text-center">
+    <p class="mb-0">&copy; 2026 Pixelora Store | All Rights Reserved</p>
+</footer>
+
+<script>
+    let total = 0;
+
+    function addCart(name, price) {
+        const cartItems = document.getElementById("cartItems");
+
+        if (total === 0) {
+            cartItems.innerHTML = "";
+        }
+
+        const item = document.createElement("li");
+        item.className = "list-group-item d-flex justify-content-between";
+        item.textContent = name + " - ₹" + price;
+
+        cartItems.appendChild(item);
+
+        total += price;
+        document.getElementById("total").textContent = total;
+    }
+
+    function clearCart() {
+        total = 0;
+        document.getElementById("total").textContent = total;
+        document.getElementById("cartItems").innerHTML =
+            '<li class="list-group-item">Your cart is empty.</li>';
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
